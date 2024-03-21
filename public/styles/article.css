@@ -59,6 +59,11 @@ div.article-category-date-container {
     gap: 20px;
 }
 
+div.article-category-date-like-container {
+    display: flex;
+    justify-content: space-between
+}
+
 p.article-category {
     font-family: Inter;
     color: rosybrown;

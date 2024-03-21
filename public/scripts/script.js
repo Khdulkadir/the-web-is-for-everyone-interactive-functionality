@@ -128,4 +128,6 @@ for (var i = 0; i < elements.length; i++) {
     var formattedDateStr = dayValue + " " + monthNamesArray[monthIndexValue] + " " + yearValue + ", " + hourValue + ":" + (minuteValue < 10 ? '0' : '') + minuteValue;
 
     // Update the content of the element with the formatted date
-    document.querySelector('.article-post-date').textContent = formattedDateStr;
+document.querySelector('.article-post-date').textContent = formattedDateStr;
+    
+

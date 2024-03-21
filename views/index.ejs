@@ -9,7 +9,7 @@
 <div class="main-container">
   <a
     class="article-link"
-    href="<%= voorpagina[0].categories[0] %>/<%= voorpagina[0].id%>"
+    href="artikel/<%= voorpagina[0].slug%>"
   >
     <article class="main-article">
       <div class="article-content-container">
@@ -42,7 +42,7 @@
 <% for (var i = 1; i <= 3; i++) { %>
   <a
     class="article-link"
-    href="<%= voorpagina[i].categories[0]%>/<%= voorpagina[i].id%>"
+    href="artikel/<%= voorpagina[i].slug%>"
   >
     <article class="sub-article">
       <div class="sub-article-featured-image-container">
@@ -75,7 +75,7 @@
  <% binnenland.forEach(function(binnenland) { %>
   <a
     class="article-link"
-    href="<%= binnenland.categories[0]%>/<%= binnenland.id%>"
+    href="artikel/<%= binnenland.slug%>"
   >
     <article class="sub-article">
       <div class="sub-article-featured-image-container">
@@ -107,7 +107,7 @@
 <% buitenland.forEach(function(buitenland) { %>
   <a
     class="article-link"
-    href="<%= buitenland.categories[0]%>/<%= buitenland.id%>"
+    href="artikel/<%= buitenland.slug%>"
   >
     <article class="sub-article">
       <div class="sub-article-featured-image-container">
@@ -139,7 +139,7 @@
 <% columns.forEach(function(columns) { %>
   <a
     class="article-link"
-    href="<%= columns.categories[0]%>/<%= columns.id%>"
+    href="artikel/<%= columns.slug%>"
   >
     <article class="sub-article">
       <div class="sub-article-featured-image-container">
@@ -171,7 +171,7 @@
 <% economie.forEach(function(economie) { %>
   <a
     class="article-link"
-    href="<%= economie.categories[0]%>/<%= economie.id%>"
+    href="artikel/<%= economie.slug%>"
   >
     <article class="sub-article">
       <div class="sub-article-featured-image-container">
@@ -203,7 +203,7 @@
 <% kunstmedia.forEach(function(kunstmedia) { %>
   <a
     class="article-link"
-    href="<%= kunstmedia.categories[0]%>/<%= kunstmedia.id%>"
+    href="artikel/<%= kunstmedia.slug%>"
   >
     <article class="sub-article">
       <div class="sub-article-featured-image-container">
@@ -236,7 +236,7 @@
 <% podcast.forEach(function(podcast) { %>
   <a
     class="article-link"
-    href="<%= podcast.categories[0]%>/<%= podcast.id%>"
+    href="artikel/<%= podcast.slug%>"
   >
     <article class="sub-article">
       <div class="sub-article-featured-image-container">
@@ -268,7 +268,7 @@
 <% politiek.forEach(function(politiek) { %>
   <a
     class="article-link"
-    href="<%= politiek.categories[0]%>/<%= politiek.id%>"
+    href="artikel/<%= politiek.slug%>"
   >
     <article class="sub-article">
       <div class="sub-article-featured-image-container">
@@ -300,7 +300,7 @@
 <% wetenschap.forEach(function(wetenschap) { %>
   <a
     class="article-link"
-    href="<%= wetenschap.categories[0]%>/<%= wetenschap.id%>"
+    href="artikel/<%= wetenschap.slug%>"
   >
     <article class="sub-article">
       <div class="sub-article-featured-image-container">

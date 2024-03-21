@@ -31,7 +31,6 @@ app.listen(app.get("port"), function () {
 });
 
 /*** Constants ***/
-
 const baseURL = "https://redpers.nl/wp-json/wp/v2/posts?categories=";
 const perPage = "&per_page=3";
 
@@ -86,17 +85,16 @@ app.get("/", function (request, response) {
 });
 
 app.get("/:categories", function (request, response) {
-  fetchJson(
-    `https://redpers.nl/wp-json/wp/v2/posts?categories=${request.params.categories}`
-  ).then((categoryData) => {
+  fetchJson(`https://redpers.nl/wp-json/wp/v2/posts?categories=${request.params.categories}`).then
+    ((categoryData) => {
     response.render("category", {
       category: categoryData,
     });
   });
 });
 
-app.get("/:categories/:id", function (request, response) {
-  fetchJson(`https://redpers.nl/wp-json/wp/v2/posts/${request.params.id}`).then(
+app.get("/artikel/:slug", function (request, response) {
+  fetchJson(`https://redpers.nl/wp-json/wp/v2/posts/?slug=${request.params.slug}`).then(
     (articleData) => {
       response.render("article", {
         article: articleData,
@@ -104,3 +102,18 @@ app.get("/:categories/:id", function (request, response) {
     }
   );
 });
+
+// New route to handle post request to increase shares count
+app.post('/artikel/:slug', (request, response) => {
+  fetchJson(`https://fdnd-agency.directus.app/items/redpers_shares?filter[slug][_eq]=${request.params.slug}`).then
+    (({ data }) => {
+  fetchJson(`https://fdnd-agency.directus.app/items/redpers_shares/${data[0]?.id ? data[0].id : ''}`, {
+      method: data[0]?.id ? 'PATCH' : 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        shares: data.length > 0 ? data[0].shares + 1 : 1,
+      }),
+    })
+  })
+  response.redirect(301, `/artikel/${request.params.slug}`)
+})
