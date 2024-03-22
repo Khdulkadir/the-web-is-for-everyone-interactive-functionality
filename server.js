@@ -100,9 +100,10 @@ app.get("/artikel/:slug", function (request, response) {
     fetchJson(`https://redpers.nl/wp-json/wp/v2/posts/?slug=${request.params.slug}`),
     fetchJson(`https://fdnd-agency.directus.app/items/redpers_shares?filter={"slug":"${slugdirectus}"}`)
   ]).then(([articleData, likeData]) => {
+    console.log(likeData.data)
     response.render("article", {
       article: articleData,
-      like: likeData
+      like: likeData.data
     });
   });
 });
