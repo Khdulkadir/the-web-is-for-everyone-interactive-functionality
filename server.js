@@ -93,15 +93,20 @@ app.get("/:categories", function (request, response) {
   });
 });
 
+
 app.get("/artikel/:slug", function (request, response) {
-  fetchJson(`https://redpers.nl/wp-json/wp/v2/posts/?slug=${request.params.slug}`).then(
-    (articleData) => {
-      response.render("article", {
-        article: articleData,
-      });
-    }
-  );
+  const slugdirectus = encodeURIComponent(request.params.slug);
+  Promise.all([
+    fetchJson(`https://redpers.nl/wp-json/wp/v2/posts/?slug=${request.params.slug}`),
+    fetchJson(`https://fdnd-agency.directus.app/items/redpers_shares?filter={"slug":"${slugdirectus}"}`)
+  ]).then(([articleData, likeData]) => {
+    response.render("article", {
+      article: articleData,
+      like: likeData
+    });
+  });
 });
+
 
 // New route to handle post request to increase shares count
 app.post('/artikel/:slug', (request, response) => {

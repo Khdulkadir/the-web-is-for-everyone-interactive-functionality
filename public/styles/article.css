@@ -113,3 +113,20 @@ div.article-content blockquote {
         font-family: Arial, Helvetica, sans-serif;
     }
 }
+
+button#share {
+    font-family: Inter;
+    font-size: 13px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+        &:hover {
+        color: #a8a8a8;
+        fill: #a8a8a8
+    }
+}
+
+button#share span svg {
+    margin-right: 5px;
+    vertical-align: -3px;
+}
