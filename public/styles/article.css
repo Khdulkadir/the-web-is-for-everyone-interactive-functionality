@@ -121,8 +121,10 @@ button#share {
     cursor: pointer;
     transition: 0.3s;
         &:hover {
-        color: #a8a8a8;
-        fill: #a8a8a8
+        opacity: 0.5;
+    }
+    &:active {
+        transform: scale(1.5);
     }
 }
 

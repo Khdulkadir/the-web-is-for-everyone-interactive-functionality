@@ -121,5 +121,7 @@ app.post('/artikel/:slug', (request, response) => {
       }),
     })
   })
-  response.redirect(301, `/artikel/${request.params.slug}`)
+  setTimeout(() => {
+        response.redirect(301, `/artikel/${request.params.slug}`);
+      }, 500);
 })
