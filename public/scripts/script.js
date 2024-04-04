@@ -129,5 +129,3 @@ for (var i = 0; i < elements.length; i++) {
 
     // Update the content of the element with the formatted date
 document.querySelector('.article-post-date').textContent = formattedDateStr;
-    
-
