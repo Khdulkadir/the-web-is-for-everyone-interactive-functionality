@@ -46,6 +46,8 @@ const apiURLWetenschap = baseURL + 94 + perPage;
 
 /*** Routes & data ***/
 
+/*** FRONT PAGE ***/
+
 app.get("/", function (request, response) {
   Promise.all([
     fetchJson(apiURLVoorpagina),
@@ -84,6 +86,8 @@ app.get("/", function (request, response) {
   );
 });
 
+/***CATEGORY PAGES***/
+
 app.get("/:categories", function (request, response) {
   fetchJson(`https://redpers.nl/wp-json/wp/v2/posts?categories=${request.params.categories}`).then
     ((categoryData) => {
@@ -93,6 +97,7 @@ app.get("/:categories", function (request, response) {
   });
 });
 
+/***ARTICLE PAGE ***/
 
 app.get("/artikel/:slug", function (request, response) {
   const slugdirectus = encodeURIComponent(request.params.slug);
@@ -108,7 +113,9 @@ app.get("/artikel/:slug", function (request, response) {
   });
 });
 
-// New route to handle post request to increase shares count
+
+/***LIKE ARTICLE ***/
+
 app.post('/artikel/:slug', (request, response) => {
   fetchJson(`https://fdnd-agency.directus.app/items/redpers_shares?filter[slug][_eq]=${request.params.slug}`).then
     (({ data }) => {

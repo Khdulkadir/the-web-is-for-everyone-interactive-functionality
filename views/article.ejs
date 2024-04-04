@@ -5,6 +5,8 @@
   <body>
 <%- include('partials/header'); %>
 
+<!-- START MAIN -->
+
 <main>
 <div class="article-page-container">
   <article class="article-page">
@@ -20,6 +22,9 @@
         <p class="article-category"><%= article[0].categories[0]%></p>
         <p class="article-post-date"><%= article[0].date %></p>
       </div>
+
+      <!-- START LIKE INTERACTION -->
+      
       <form action="/artikel/<%= article[0].slug %>" method="post">
         <button type="submit" id="share" aria-label="Like deze artikel"><span><svg height="16px" width="16px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g><path d="M498.323,297.032c0-7.992-1.901-15.683-5.553-22.635c12.034-9.18,19.23-23.438,19.23-38.914c0-27.037-21.996-49.032-49.032-49.032H330.206c11.434-29.24,17.665-64.728,17.665-101.419c0-23.266-18.928-42.194-42.194-42.194
 		s-42.193,18.928-42.193,42.194c0,83.161-58.012,145.389-144.355,154.844c-0.592,0.065-1.159,0.197-1.7,0.38
@@ -38,6 +43,9 @@
 		c0,11.798-6.228,22.539-16.359,28.469h-14.975c-4.418,0-8,3.582-8,8s3.582,8,8,8h12.835c3.149,5.155,4.822,10.984,4.822,17.079
 		C482.323,308.985,475.927,319.848,465.561,325.727z"/><path d="M422.384,325.727h-8.525c-4.418,0-8,3.582-8,8s3.582,8,8,8h8.525c4.418,0,8-3.582,8-8S426.802,325.727,422.384,325.727z"/><path d="M436.934,263.953h-8.525c-4.418,0-8,3.582-8,8s3.582,8,8,8h8.525c4.418,0,8-3.582,8-8S441.352,263.953,436.934,263.953z"/><path d="M407.833,387.5h-8.525c-4.418,0-8,3.582-8,8s3.582,8,8,8h8.525c4.418,0,8-3.582,8-8S412.252,387.5,407.833,387.5z"/><path d="M80,264c-8.822,0-16,7.178-16,16s7.178,16,16,16s16-7.178,16-16S88.822,264,80,264z"/></g></svg>+<%= (like[0] && like[0].shares) || 0 %></span></button>
       </form>
+
+      <!-- END LIKE INTERACTION -->
+
     </div>
     <div class="article-title-container">
       <h2 class="article-title"><%- article[0].title.rendered %></h2>
@@ -52,5 +60,7 @@
   </article>
 </div>
 </main>
+
+<!-- END MAIN -->
 
 <%- include('partials/footer'); %>
