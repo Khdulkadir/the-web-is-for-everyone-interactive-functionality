@@ -14,6 +14,14 @@ Na het forken van de repo heb ik eerst ik alle vereiste bestanden aangemaakt in 
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
+**Progressive enhancement
+**
+Ik heb mijn article.ejs pagina, waarop de POST interactie voorkomt, getest aan de hand van de Progressive Enhancement methode. Ik heb getest op de desktop en mobile browsers van Chrome, Edge en Firefox. Ook heb ik getest op Safari op een Ipod Touch. Ik heb gelet op de drie lagen die aan bod komen bij progressive enhancement:
+
+Laag 1: De functionaliteit is aanwezig en heeft de pagina een goede basis.
+Laag 2: De huisstijl en gebruikersfeedback zijn toegevoegd.
+Laag 3: Eventuele complexere en nieuwere codeermethoden worden gebruikt.
+Chrome, Edge en Firefox bleken meteen de website zoals bedoeld te renderen. Alle drie de lagen kwamen met succes uit de verf. Op de Ipod Touch was het een ander verhaal. Daar bleken 'laag 2' en 'laag 3' niet correct te werken. Door het gebruik van modernere CSS properties en CSS nesting werd deze CSS code genegeerd. Caniuse.com geeft ook aan dat nesting, gap en scale nog redelijk recent zijn. Gelukkig bestaat mijn 1e laag uit goede en semantische HTML, waardoor de functionaliteit van de website zelfs op dit oude apparaat niet verloren ging.
 
 ## Installatie
 <!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
